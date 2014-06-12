@@ -1,15 +1,23 @@
-<scxml version="1.0" xmlns="http://www.w3.org/2005/07/scxml" clock="true" notes="true" previewEnable="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<scxml version="1.0" xmlns="http://www.w3.org/2005/07/scxml" 
+	clock="true" notes="true" previewEnable="false" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<webflow id="wordtranslate" initial="wordreference">
-      <state id="wordreference" URLPattern="*www.wordreference.com/*">
-		<transition event="COWPATH:CLICK" cond="['wordreference2bab']" target="bab">
-		  <script>GoTo("http://es.bab.la/").Paste("$word").Into("//input[@id='babQ']").Click("//button[@class='btn btn-primary']");</script>
+      <state id="wordreference" URLPattern="*www.wordreference.com/es/translation.asp?tranword=*">
+		<transition event="COWPATH:CLICK" cond="['wordreference2bab']" 
+						target="bab">
+		  <script>
+			GoTo("es.bab.la/").
+			Paste("$word").Into("//input[@id='babQ']").
+			Click("//button[@class='btn btn-primary']");
+		  </script>
 		</transition>
 		<onentry>
 		  <script>Copy("//div[@id='articleHead']/h3/strong").Into("$word");</script>
 		</onentry>
 	  </state>
 	  <state id="bab" URLPattern="*es.bab.la*">
-		<transition event="COWPATH:CLICK" cond="['back2wordreference']" target="wordreference"/>
+		<transition event="COWPATH:CLICK" cond="['back2wordreference']" 
+						target="wordreference"/>
 	  </state>
 	</webflow>
 </scxml>
