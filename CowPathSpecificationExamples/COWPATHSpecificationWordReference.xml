@@ -15,7 +15,7 @@
 		  <script>Copy("//div[@id='articleHead']/h3/strong").Into("$word");</script>
 		</onentry>
 	  </state>
-	  <state id="bab" URLPattern="*es.bab.la*">
+	  <state id="bab" URLPattern="*es.bab.la/*">
 		<transition event="COWPATH:CLICK" cond="['back2wordreference']" 
 						target="wordreference"/>
 	  </state>

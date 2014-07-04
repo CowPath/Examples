@@ -13,7 +13,7 @@
 		</transition>
 		<onentry>
 			<script>
-			  Copy("//*[@id='mainContent']/div/h1/text()").Into("$filmTitle");
+			  Copy("//*[@id='mainContent']/h1/text()").Into("$filmTitle");
 			</script>
 		</onentry>
 	  </state>		
