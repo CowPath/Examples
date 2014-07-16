@@ -29,8 +29,8 @@
 		<transition event="COWPATH:CLICK" cond="['go2Facebook']" 
 						target="facebook">
 		  <script>
-			GoTo("www.facebook.com/events/list").
-			Click("//*[text()='Create event']").
+			GoTo("www.facebook.com/events/upcoming").
+			Click("//*[text()='Create']").
 			Paste("$filmTitle").Into("//*[@name='title']").
 			Paste("$description").
 			Into("/html/body/div[@role='dialog'][2]/div/div/div/form/div[2]/
@@ -44,7 +44,7 @@
 		  </script>
 		</onentry>
 	  </state>
-	  <state id="facebook" URLPattern="*www.facebook.com/events/list">
+	  <state id="facebook" URLPattern="*www.facebook.com/events/upcoming">
 		<transition event="COWPATH:CLICK" cond="['back2Films']" 
 						target="films"/>
 	  </state>

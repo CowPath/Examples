@@ -29,8 +29,8 @@
 		<transition event="COWPATH:CLICK" cond="['go2Facebook']" 
 						target="facebook">
 		  <script>
-		    GoTo("www.facebook.com/events/list").
-			Click("//*[text()='Create event']").
+		    GoTo("www.facebook.com/events/upcoming").
+			Click("//*[text()='Create']").
 			Paste("$restaurantName").Into("//*[@name='title']").
 			Paste("$description").Into("/html/body/div[@role='dialog'][2]/div/div/div/
 			form/div[2]/span/div/table/tbody/tr[2]/td/div/div/div[2]/div/div/textarea");
@@ -40,7 +40,7 @@
 		  <script>Copy("//*[@class='description']/p/text()").Into("$description");</script>
 		</onentry>
 	  </state>
-	  <state id="facebook" URLPattern="*www.facebook.com/events/list">
+	  <state id="facebook" URLPattern="*www.facebook.com/events/upcoming">
 		<transition event="COWPATH:CLICK" cond="['back2Restaurants']" 
 						target="restaurants"/>
 	  </state>
