@@ -6,9 +6,9 @@
 		<transition event="COWPATH:CLICK" cond="['go2SquareMeal']" 
 						target="squaremealList">
 		  <script>
-			GoTo("www.squaremeal.co.uk/restaurants/london/").
-			Paste("$restaurantName").Into("//*[@id='s']").
-			Click("//*[@value='Go']");
+			GoTo("www.squaremeal.co.uk/restaurants/towns/london").
+			Paste("$restaurantName").Into("//*[@id='search']/div[1]/input[1]").
+			Click("//*[@id='defaultsearch_0_btnAutoSearch']");
 		  </script>
 		</transition>
 		<onentry>
@@ -20,10 +20,10 @@
 	  <state id="squaremealList" URLPattern="*www.squaremeal.co.uk/search?*">
 		<transition event="COWPATH:CLICK" cond="['back2Restaurants']" 
 						target="restaurants"/>
-		<transition event="HOST:CLICK" cond="['//*[@itemprop='name']']" 
+		<transition event="HOST:CLICK" cond="['//*[@class='name']/h3/a']" 
 		  			    target="squaremeal"/>
 	  </state>
-	  <state id="squaremeal" URLPattern="*www.squaremeal.co.uk/restaurants/london/view/*">
+	  <state id="squaremeal" URLPattern="*www.squaremeal.co.uk/restaurant/*">
 		<transition event="COWPATH:CLICK" cond="['back2Restaurants']" 
 						target="restaurants"/>
 		<transition event="COWPATH:CLICK" cond="['go2Facebook']" 
@@ -32,8 +32,7 @@
 		    GoTo("www.facebook.com/events/upcoming").
 			Click("//*[text()='Create']").
 			Paste("$restaurantName").Into("//*[@name='title']").
-			Paste("$description").Into("/html/body/div[@role='dialog'][2]/div/div/div/
-			form/div[2]/span/div/table/tbody/tr[2]/td/div/div/div[2]/div/div/textarea");
+			Paste("$description").Into("//*[@class='eventDetailContainer']/div/div[2]/div/div/textarea");
 		  </script>
 		</transition>
 		<onentry>

@@ -12,7 +12,7 @@
 		  </script>
 		</transition>
 		<onentry>
-		  <script>Copy("//div[@id='articleHead']/h3/strong").Into("$word");</script>
+		  <script>Copy("//div[@id='articleHead']/h3").Into("$word");</script>
 		</onentry>
 	  </state>
 	  <state id="bab" URLPattern="*es.bab.la/*">

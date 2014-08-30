@@ -51,16 +51,16 @@
 		  <transition event="COWPATH:CLICK" cond="['check4plagiarism']" 
 						  target="grammarReport">
 			<script>
-			  GoTo("www.grammarly.com/?alt1051=3").
-			  Paste("$abstract").Into("//*[@id='maintextarea']").
-			  Click("//*[@id='check_btn']");
+			  GoTo("ed.grammarly.com/editor/view").
+			  Paste("$abstract").Into("//*[@id='content']").
+			  Click("//*[@id='reviewBtn']");
 			</script>
 		  </transition>
 		  <onentry>
 			<script>Copy("//*[text()='Abstract:']/../td[2]/text()").Into("$abstract");</script>
 		  </onentry>
 		</state>
-		<state id="grammarReport" URLPattern="*ed.grammarly.com/register/signup/report_pale/?newv=1">
+		<state id="grammarReport" URLPattern="*ed.grammarly.com/editor/view?analyzeJustCompleted=true*">
 		  <transition event="COWPATH:CLICK" cond="['back2easychair']" 
 						  target="submissionInfo"/>
 		</state>

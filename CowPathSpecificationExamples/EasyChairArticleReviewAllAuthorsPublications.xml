@@ -6,16 +6,16 @@
 		<state id="submissionInfo" URLPattern="*www.easychair.org/conferences/submission_info_show.cgi?*">
 		  <transition event="COWPATH:CLICK" cond="['check4plagiarism']" target="plagiarismReport">
 			<script>
-			  GoTo("www.grammarly.com/?alt1051=3").
-			  Paste("$abstract").Into("//*[@ID='maintextarea']").
-			  Click("//*[@id='check_btn']");
+			  GoTo("ed.grammarly.com/editor/view").
+			  Paste("$abstract").Into("//*[@id='content']").
+			  Click("//*[@id='reviewBtn']");
 			</script>
 		  </transition>
 		  <onentry>
 			<script>Copy("//*[text()='Abstract:']/../td[2]/text()").Into("$abstract");</script>
 		  </onentry>
 		</state>
-		<state id="plagiarismReport" URLPattern="*ed.grammarly.com/register/signup/report_pale/*">
+		<state id="plagiarismReport" URLPattern="*ed.grammarly.com/editor/view?analyzeJustCompleted=true*">
 		  <transition event="COWPATH:CLICK" cond="['back2article']" target="submissionInfo"/>
 		</state>
 	  </state>
@@ -34,13 +34,13 @@
 			<script>Copy("text()").Into("$firstAuthor");</script>
 		  </onentry>
 		</state>
-	  <state id="authorPublications" URLPattern="*dblp.uni-trier.de/pers/*">
-		<transition event="COWPATH:CLICK" cond="['back2review']" target="addReview"/>
-		<transition event="HOST:CLICK" cond="['//li[contains(@id,'13')]/nav/ul/li[2]/div/a']" target="bibtex2013"/>
-	  </state>
-	  <state id="bibtex2013" URLPattern="*dblp.uni-trier.de/rec/bibtex/*13">
-		<transition event="COWPATH:CLICK" cond="['back2authorPublications']" target="authorPublications"/>
-	  </state>
+		<state id="authorPublications" URLPattern="*dblp.uni-trier.de/pers/*">
+		  <transition event="COWPATH:CLICK" cond="['back2review']" target="addReview"/>
+		  <transition event="HOST:CLICK" cond="['//li[contains(@id,'13')]/nav/ul/li[2]/div/a']" target="bibtex2013"/>
+		</state>
+		<state id="bibtex2013" URLPattern="*dblp.uni-trier.de/rec/bibtex/*13">
+		  <transition event="COWPATH:CLICK" cond="['back2authorPublications']" target="authorPublications"/>
+		</state>
 	</state>
   </webflow>
 </scxml>

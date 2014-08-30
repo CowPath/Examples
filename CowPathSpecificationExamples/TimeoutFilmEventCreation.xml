@@ -33,8 +33,7 @@
 			Click("//*[text()='Create']").
 			Paste("$filmTitle").Into("//*[@name='title']").
 			Paste("$description").
-			Into("/html/body/div[@role='dialog'][2]/div/div/div/form/div[2]/
-					span/div/table/tbody/tr[2]/td/div/div/div[2]/div/div/textarea");
+			Into("//*[@class='eventDetailContainer']/div/div[2]/div/div/textarea");
 		  </script>
 		</transition>
 		<onentry>

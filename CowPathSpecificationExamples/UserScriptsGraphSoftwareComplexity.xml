@@ -2,7 +2,7 @@
 	clock="true" notes="true" previewEnable="false" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<webflow id="scriptCheck" initial="userscripts">
-	  <state id="userscripts" URLPattern="*userscripts.org:8080/scripts/review/*">
+	  <state id="userscripts" URLPattern="*userscripts-mirror.org/scripts/review/*">
 		<transition event="COWPATH:CLICK" cond="['checkScriptComplexity']" 
 						target="JSComplexity">
 		  <script>
@@ -60,4 +60,6 @@
 	  </state>
 	</webflow>
 </scxml>		
+	
+		
 	
