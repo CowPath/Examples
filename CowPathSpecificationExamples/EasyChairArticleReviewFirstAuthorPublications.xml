@@ -15,7 +15,7 @@
 		  <script>Copy("//*[text()='Abstract:']/../td[2]/text()").Into("$abstract");</script>
 		</onentry>
 	  </state>
-	  <state id="plagiarismReport" URLPattern="*ed.grammarly.com/editor/view?analyzeJustCompleted=true*">
+	  <state id="plagiarismReport" URLPattern="*ed.grammarly.com/register/signup/report_pale/">
 		<transition event="COWPATH:CLICK" cond="['back2article']" target="submissionInfo"/>
 	  </state>
 	</state>
@@ -44,7 +44,3 @@
 	</state>
   </webflow>
 </scxml>
-
-
-
-

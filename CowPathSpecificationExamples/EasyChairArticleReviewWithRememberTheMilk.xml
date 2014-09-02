@@ -60,10 +60,9 @@
 			<script>Copy("//*[text()='Abstract:']/../td[2]/text()").Into("$abstract");</script>
 		  </onentry>
 		</state>
-		<state id="grammarReport" URLPattern="*ed.grammarly.com/editor/view?analyzeJustCompleted=true*">
+		<state id="grammarReport" URLPattern="*ed.grammarly.com/register/signup/report_pale/">
 		  <transition event="COWPATH:CLICK" cond="['back2easychair']" 
 						  target="submissionInfo"/>
 		</state>
 	</webflow>
 </scxml>
-

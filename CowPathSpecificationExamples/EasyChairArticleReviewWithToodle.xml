@@ -61,15 +61,8 @@
 		</script>
 	  </onentry>
 	</state>
-	<state id="grammarReport" URLPattern="*ed.grammarly.com/editor/view?analyzeJustCompleted=true*">
+	<state id="grammarReport" URLPattern="**ed.grammarly.com/register/signup/report_pale/">
 	  <transition event="COWPATH:CLICK" cond="['back2article']" target="submissionInfo"/>
 	</state>
   </webflow>
 </scxml>
-
-
-
-
-
-
-
