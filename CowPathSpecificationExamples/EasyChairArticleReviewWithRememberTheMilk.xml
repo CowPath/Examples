@@ -32,16 +32,16 @@
 		<transition event="COWPATH:CLICK" cond="['checkAuthorWorks']" 
 						target="dblp">
 		  <script>
-			GoTo("dblp.uni-trier.de/").
-			Paste("$author").Into("//div[@id='main']/center/table/tbody/tr/td/form/input[1]").
-			Click("//*[@VALUE='Submit']");
+			GoTo("www.informatik.uni-trier.de/~ley/db/about/author.html").
+			Paste("$author").Into("/html/body/div[1]/center/form/input[1]").
+			Click("//*[@value='Submit']");
 		  </script>
 		</transition>
 		<onentry>
 		  <script>Copy("//*[text()='Authors:']/../../td[2]/text()","(.*?)( and |,|$)").Into("$author");</script>
 			</onentry>
 		</state>
-		<state id="dblp" URLPattern="*dblp.uni-trier.de/pers/*">
+		<state id="dblp" URLPattern="*www.informatik.uni-trier.de/~ley/pers/hd/*">
 		  <transition event="COWPATH:CLICK" cond="['back2article']" 
 						  target="addReview"/>
 		</state>

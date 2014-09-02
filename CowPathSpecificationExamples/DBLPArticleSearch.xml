@@ -2,7 +2,7 @@
 	clock="true" notes="true" previewEnable="false" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<webflow id="findArticleACM" initial="authorPublications">
-	  <state id="authorPublications" URLPattern="*dblp.uni-trier.de/pers/*">
+	  <state id="authorPublications" URLPattern="*www.informatik.uni-trier.de/~ley/pers/hd/*">
 		<transition event="COWPATH:CLICK" cond="['//*[@class='data']']" 
 						target="acmResults">
 		  <script>

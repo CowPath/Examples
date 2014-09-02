@@ -25,16 +25,16 @@
 			  			  cond="['split('//*[@id='reviewform']//td/b[text()='Authors:']/../../td[2]',' and |,')']" 
 						  target="authorPublications">
 			<script>
-			  GoTo("dblp.uni-trier.de/").
-			  Paste("$firstAuthor").Into("//div[@id='main']/center/table/tbody/tr/td/form/input[1]").
-			  Click("//*[@VALUE='Submit']");
+			  GoTo("www.informatik.uni-trier.de/~ley/db/about/author.html").
+			  Paste("$firstAuthor").Into("/html/body/div[1]/center/form/input[1]").
+			  Click("//*[@value='Submit']");
 			</script>
 		  </transition>
 		  <onentry>
 			<script>Copy("text()").Into("$firstAuthor");</script>
 		  </onentry>
 		</state>
-		<state id="authorPublications" URLPattern="*dblp.uni-trier.de/pers/*">
+		<state id="authorPublications" URLPattern="*www.informatik.uni-trier.de/~ley/pers/hd/*">
 		  <transition event="COWPATH:CLICK" cond="['back2review']" target="addReview"/>
 		  <transition event="HOST:CLICK" cond="['//li[contains(@id,'13')]/nav/ul/li[2]/div/a']" target="bibtex2013"/>
 		</state>
